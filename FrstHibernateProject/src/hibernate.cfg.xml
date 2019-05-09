@@ -29,6 +29,6 @@
 
 <!-- Names the annotated entity class -->
 <mapping class="Model.Marka"/>
-
+<mapping class="Model.User"/>
 </session-factory>
 </hibernate-configuration>
