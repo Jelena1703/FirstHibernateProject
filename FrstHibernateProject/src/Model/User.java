@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 @Entity
 public class User {
 
@@ -18,6 +19,10 @@ public class User {
 	private int idUser;
 	private String ime;
 	private String prezime;
+	
+	@OneToOne
+	private Marka marka ;
+	
 	
 	@ElementCollection
 	private List<Adresa> listaAdresa = new ArrayList<Adresa>();
@@ -60,6 +65,16 @@ public class User {
 
 	public void setListaAdresa(List<Adresa> listaAdresa) {
 		this.listaAdresa = listaAdresa;
+	}
+
+
+	public Marka getMarka() {
+		return marka;
+	}
+
+
+	public void setMarka(Marka marka) {
+		this.marka = marka;
 	}
 	
 	
