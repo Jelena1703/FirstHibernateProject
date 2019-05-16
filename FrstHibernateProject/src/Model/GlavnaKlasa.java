@@ -43,8 +43,12 @@ public class GlavnaKlasa {
 	
 	List<Adresa> listaAdresa = new ArrayList<Adresa>();
 	List<Marka> marke = new ArrayList<Marka>();
+	List<User> listaUsera = new ArrayList<User>();
 	
 	 User user = new User();
+	 User user2 = new User();
+	 User user3 = new User();
+	 
 	 Marka marka = new Marka();
 	 Marka marka2 = new Marka();
 	 Adresa adresa = new Adresa();
@@ -55,11 +59,15 @@ public class GlavnaKlasa {
 	 
 	 marka.setNazivMarke("Ferari");
 	 marka.setAdresa(adresa);
-	 marka.setUser(user);
+	 listaUsera.add(user);
+	 listaUsera.add(user2);
+	 marka.setListaUsera(listaUsera);
 	 
 	 marka2.setNazivMarke("Lambo");
 	 marka2.setAdresa(adresa);
-	 marka2.setUser(user);
+	 listaUsera.add(user);
+	 listaUsera.add(user3);
+	 marka.setListaUsera(listaUsera);
 	 
 	 user.setIme("Pera");
 	 user.setPrezime("Peric");
@@ -70,11 +78,31 @@ public class GlavnaKlasa {
 	 marke.add(marka2);
 	 user.setMarke(marke);
 	 
+	 user2.setIme("Mika");
+	 user2.setPrezime("Mikic");
+	 
+	 listaAdresa.add(adresa);
+	 user2.setListaAdresa(listaAdresa);
+	 marke.add(marka);
+	 user2.setMarke(marke);
+	 
+	 user3.setIme("Ivana");
+	 user3.setPrezime("Ivanovic");
+	 
+	 listaAdresa.add(adresa);
+	 user3.setListaAdresa(listaAdresa);
+	
+	 marke.add(marka2);
+	 user3.setMarke(marke);
 	 
 	 Session sesija = sf.openSession();
 	 sesija.beginTransaction();
 	 try {
 		 sesija.save(user);
+		 sesija.save(user2);
+		 sesija.save(user3);
+		 sesija.save(marka);
+		 sesija.save(marka2);
 		 
 		sesija.getTransaction().commit();
 	} catch (Exception e) {

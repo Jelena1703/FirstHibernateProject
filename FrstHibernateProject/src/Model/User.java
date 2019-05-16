@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 @Entity
@@ -28,7 +29,7 @@ public class User {
 	@ElementCollection
 	private List<Adresa> listaAdresa = new ArrayList<Adresa>();
 
-    @OneToMany (cascade = CascadeType.ALL)
+    @ManyToMany
 	private List<Marka> marke = new ArrayList<Marka>();
 	
 	
