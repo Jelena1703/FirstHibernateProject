@@ -3,6 +3,7 @@ package Model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,7 +28,7 @@ public class User {
 	@ElementCollection
 	private List<Adresa> listaAdresa = new ArrayList<Adresa>();
 
-    @OneToMany
+    @OneToMany (cascade = CascadeType.ALL)
 	private List<Marka> marke = new ArrayList<Marka>();
 	
 	

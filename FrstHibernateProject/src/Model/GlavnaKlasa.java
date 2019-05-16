@@ -75,8 +75,7 @@ public class GlavnaKlasa {
 	 sesija.beginTransaction();
 	 try {
 		 sesija.save(user);
-		 sesija.save(marka);
-		 sesija.save(marka2);
+		 
 		sesija.getTransaction().commit();
 	} catch (Exception e) {
 		sesija.getTransaction().rollback();
